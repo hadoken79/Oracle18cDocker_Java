@@ -1,0 +1,16 @@
+#build oracle18c container from image made in OracleRecourses
+version: '2'
+services:
+  database:
+    image: oracle/database:18.4.0-xe
+    container_name: Oracle18c_TestDB
+    environment:
+      - ORACLE_PDB=PDBTestdata #default: ORCLPDB1
+      - ORACLE_PWD=test123
+      - ORACLE_CHARACTERSET=AL32UTF8
+    volumes:
+      - ~/oradata:/opt/oracle/oradata #persist database data.
+    ports:
+      - 1521:1521
+      - 8080:8080 #probably for ui express
+      - 5500:5500 #Oracle Enterprise ManagerExpress https://localhost:5500/em/

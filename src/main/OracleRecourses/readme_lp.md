@@ -1,0 +1,1 @@
+to get dockerimage working clone https://github.com/oracle/docker-images.git into this folder.
